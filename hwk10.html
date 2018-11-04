@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Project #2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand">Rohan Chaudhry, Shane Mathew  Mehul Mittal, Mohammad Syed, | Project #2</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link">rc43755</a>
+            </li>
+		    <li class="nav-item">
+              <a class="nav-link" href="index.html">Homework Index</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Self Grading Quiz</h1>
+              <span class="subheading">Start The Astronomy Quiz Below</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+              <h2 class="post-title">
+                True/False 
+              </h2>
+			  <br/>
+              <p >1. According to Kepler the orbit of the earth is a circle with the sun at the center.</p>
+			  <form  >
+			    <input onclick="checkQ1()" type="radio" name="question1" value="true" id='incorrectQ1'>True<br>
+				<input onclick="checkQ1()" type="radio" name="question1" value="false" id='correctQ1' >False<br>  		  
+			  </form> <br/><br/>
+			  
+			  
+			  <p >2. Ancient astronomers did consider the heliocentric model of the solar system but rejected it because they could not detect parallax.</p>
+			  <form >
+			    <input onclick="checkQ2()" type="radio" name="question2" value="true" id='correctQ2'>True<br>
+				<input onclick='checkQ2()' type="radio" name="question2" value="false" id='incorrectQ2'>False<br>  		  
+			  </form> 
+			  <br/>
+		  
+		  
+		  </div>
+          <hr>
+          <div class="post-preview">
+            
+              <h2 class="post-title">
+                Multiple Choice
+              </h2> <br/>
+              <p >3. The total amount of energy that a star emits is directly related to its </p>
+			  <div>
+			  <input onclick="checkQ3()"  type="checkbox" name='question3' value='a1' id='iQ31'> surface gravity and magnetic field 
+			  <span class="checkmark"></span><br/>
+			  <input onclick="checkQ3()" type="checkbox" name='question3' value='a2' id='correctQ3'> radius and temperature 
+			  <span class="checkmark"></span><br/>
+			  <input onclick="checkQ3()" type="checkbox" name='question3' value='a3' id='iQ32'> pressure and volume
+			  <span class="checkmark"></span><br/>
+			  <input onclick="checkQ3()" type="checkbox" name='question3' value='a4' id='iQ33'> location and velocity 
+			  <span class="checkmark"></span>
+			  </div>
+
+
+			  <p ><br/><br/>4. Stars that live the longest have </p>
+			  <div>
+			  <input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ41'> high mass 
+			  <span class="checkmark"></span><br/>
+			  <input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ42'> high temperature 
+			  <span class="checkmark"></span><br/>
+			  <input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ43'> lots of hydrogen
+			  <span class="checkmark"></span><br/>
+			  <input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='correctQ4'> small mass 
+			  <span class="checkmark"></span>
+			  </div>
+			  <br/><br/>
+			  
+			  
+			  
+			  
+          </div>
+          <hr>
+          <div class="post-preview">
+            <!-- 
+              <h2 class="post-title">
+                Fill In The Blank
+              </h2> <br/>
+
+              <p class="post-meta">5. A collection of a hundred billion stars, gas, and dust is called a ____.<br/><br/>
+			  <input id = "question5" type = "text" name = "question5"></p>
+			  
+			  
+			  <p class="post-meta"><br/><br/>6. The inverse of the Hubble's constant is a measure of the _____ of the universe.<br/><br/>
+			  <input id = "question6" type = "text" name = "question6"></p>
+			  --> 
+			  <form id = "textForm" method = "post" onsubmit = "return validate();" >
+			  
+			  <h2 class="post-title">
+                Fill In The Blank
+              </h2> <br/>
+
+              <p class="post-meta">5. A collection of a hundred billion stars, gas, and dust is called a ____.<br/><br/>
+			  <input id = "question5" type = "text" name = "question5"></p>
+			  
+			  
+			  <p class="post-meta"><br/><br/>6. The inverse of the Hubble's constant is a measure of the _____ of the universe.<br/><br/>
+			  <input id = "question6" type = "text" name = "question6"></p>
+			  
+			  <!-- Buttons --> 
+			  <input type = "submit" value = "Enter" />
+			  <input type = "reset" value = "Clear" />
+			  <br/><br/>
+			  
+			  </form>
+		  </div>
+        
+
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p class="copyright text-muted">Rohan Chaudhry, Shane Mathew  Mehul Mittal, Mohammad Syed</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+	
+	<!-- grading script --> 
+	<script> 
+	var num_correct = 0; 
+	var true1 = false; 
+	var true2 = false;
+	var true3 = false;
+	var true4 = false;
+	var true5 = false;
+	var true6 = false;
+	/* 
+	document.getElementById("question5").onsubmit = checkQ5;
+	document.getElementById("question6").onsubmit = checkQ6;
+	
+	var ans5 = document.getElementById("question5");
+	var ans6 = document.getElementById("question6"); 
+	*/ 
+	
+	
+	
+	function checkQ1(){
+		if(document.getElementById("correctQ1").checked){
+			num_correct = num_correct + 1; 
+			console.log(num_correct); 
+			
+			true1 = true; 
+		} 
+		else if(document.getElementById("incorrectQ1").checked){
+			true1 = true;
+		} 
+	} 
+	
+	function checkQ2(){
+		if(document.getElementById("correctQ2").checked){
+			num_correct = num_correct + 1; 
+			console.log(num_correct); 
+			
+			true2 = true; 
+		} 
+		else if(document.getElementById("incorrectQ2").checked){
+			true2 = true;
+		} 
+	} 
+	
+	function checkQ3(){
+		if(document.getElementById("correctQ3").checked){
+			true3 = true; 
+			if( (document.getElementById("iQ31").checked)||(document.getElementById("iQ32").checked)||(document.getElementById("iQ33").checked) ){
+				//do nothing if another choice selcted 
+				
+			} 
+			else{ //else it's correct 
+				num_correct = num_correct+1; 
+			 
+				} 
+		} 
+		else if((document.getElementById("iQ31").checked)||(document.getElementById("iQ32").checked)||(document.getElementById("iQ33").checked)){
+			true3 = true; 
+		} 
+	
+	console.log(num_correct); 
+	} 
+	
+	function checkQ4(){
+		if(document.getElementById("correctQ4").checked){
+			true4 = true; 
+			if( (document.getElementById("iQ41").checked) ||(document.getElementById("iQ42").checked)||(document.getElementById("iQ43").checked) ){
+				//do nothing if another choice selcted 
+				
+		} 
+			else{ //else it's correct 
+				num_correct = num_correct+1; 
+			
+				} 
+		} 
+		else if( (document.getElementById("iQ41").checked) ||(document.getElementById("iQ42").checked)||(document.getElementById("iQ43").checked)){
+			true4 = true; 
+		} 
+	
+	console.log(num_correct); 
+
+	} 
+	/* 
+	function checkQ5(){
+		console.log(ans5); 
+		console.log(ans5.toLowerCase()); 
+	
+	} 
+	
+	function checkQ6(){
+	
+	} 
+	*/ 
+	
+	document.getElementById("textForm").onsubmit = validate;
+    function validate (){
+	
+	var elt = document.getElementById("textForm");
+	var ans5 = elt.question5.value; 
+	var ans6 = elt.question6.value; 
+	
+	var lower5 = ans5.toLowerCase(); 
+	var lower6 = ans6.toLowerCase(); 
+	
+	if(ans5 != ""){
+		true5 = true;
+		if(ans6 != ""){
+			true6 = true;
+		} 
+	}
+	if(ans6!=""){
+		true6 = true;
+	} 
+	
+	if(lower5 == 'galaxy'){
+		if(lower6 == 'age'){ //if both correct, add 2 
+			num_correct = num_correct + 2; 
+		} 
+		else{ // if only #5 correct, add 1 
+			num_correct = num_correct + 1; 
+		} 
+	} 
+	else if (lower6 == 'age'){ // if only #6 correct, add 1 
+		num_correct = num_correct+1; 
+	} 
+
+	// else if both wrong, no added points 
+	console.log(num_correct); 
+	
+	finalScore(); 
+
+	} 
+	
+	function finalScore(){
+	console.log('atregds');
+	if( (true1 == false) ||(true2 == false) ||(true3 == false) ||(true4 == false) ||(true5 == false) ||(true6 == false)){
+		window.alert('You failed to provde an answer, so this quiz will not be graded.'); 
+	}
+	else{
+		window.alert('Your grade is ' + num_correct + ' / 6.'); 
+	} 
+	
+	
+	/*
+		//validate(); 
+		
+		// if empty fields, alert the user and do not grade quiz
+
+		//|| (document.getElementById("correctQ2").unchecked && document.getElementById("incorrectQ2").unchecked)
+	if( document.getElementById("correctQ1").unchecked ){
+		if(document.getElementById("incorrectQ1").unchecked){
+		
+		window.alert("Incomplete Submission. This quiz will not be graded."); 
+		console.log('afffffffffffff'); 
+		}
+		}
+	console.log(' omggggggggggggggggggggggggggggggggggggg'); 
+	*/ 
+	} 
+	
+	
+	</script> 
+
+  </body>
+
+</html>
