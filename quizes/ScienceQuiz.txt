@@ -1,11 +1,19 @@
 True or false, electrons are larger than molecules.
 TRUE
+FALSE
 True or false, the Atlantic Ocean is the biggest ocean on earth.
+TRUE
 FALSE
 Brass gets discoloured in air because of the presence of which of the following gases in air?
+Sodium chloride
+Ammonia
 Hydrogen sulphide
+Hydrochloric acid
 Which of the following is a non metal that remains liquid at room temperature?
+Sulfur
+Oxygen
 Bromine
+Nitrogen
 According to Newton, force is equal to mass times ______________ (please input your response starting with a capital letter).
 Acceleration 
 The color of the sky is usually __________(please input your response starting with a capital letter).

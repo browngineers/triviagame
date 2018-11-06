@@ -1,11 +1,19 @@
 True or false, George Washington was the first president of the United States.
 TRUE
+FALSE
 True or false, John Kerry ran against Donald Trump in the 2016 presidential election.
+TRUE
 FALSE
 What is Ted Cruz's real first name?
+Bob
+Tom
 Rafael
+Billy
 What is Beto O'Rourke's real first name?
+Brett
+Roggy
 Robert
+Ronald
 The current speaker of the house is ______   ______ [December 2018] (please input your response with proper naming capitalization).
 Paul Ryan
 The state Donald Trump is originally from is ______ _____(please input your response with proper capitalization convention for states).
