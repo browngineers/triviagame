@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <title>Browngineerz Project 2</title>
+	<script src="textRead.js"></script>
     <link href="player1.css" rel="stylesheet">
+	<div data-role="fieldcontain" class="ui-hide-label" id="textDiv"></div>
+	<iframe id="frmFile" src="ScienceQuiz.txt" onload="LoadFile();" style="display: none;"></iframe>
   </head>
 
   <body>
@@ -36,7 +39,7 @@
             <div class="site-heading">
               <h1>Self Grading Quiz</h1>
               <span class="subheading">You Are In 1-Player Mode</span>
-			  <span class="subheading">Start The Astronomy Quiz Below</span>
+			  <span class="subheading">Start The Science Quiz Below</span>
             </div>
           </div>
         </div>
@@ -57,18 +60,18 @@
           <div class="post-preview">
               <h2 class="post-title">True/False</h2>
 			  <br/>
-              <p>1. According to Kepler the orbit of the earth is a circle with the sun at the center.</p>
+              <p id="q1"></p>
 			  <form>
-			    <input onclick="checkQ1()" type="radio" name="question1" value="true" id='incorrectQ1'>True<br>
-				<input onclick="checkQ1()" type="radio" name="question1" value="false" id='correctQ1' >False<br>  		  
+			    <input onclick="checkQ1()" type="radio" name="question1" value="true" id='correctQ1'>True<br>
+				<input onclick="checkQ1()" type="radio" name="question1" value="false" id='incorrectQ1' >False<br>  		  
 			  </form> 
 
 			  <br/><br/>
 			  
-			  <p>2. Ancient astronomers did consider the heliocentric model of the solar system but rejected it because they could not detect parallax.</p>
+			  <p id="q2"></p>
 			  <form>
-			    <input onclick="checkQ2()" type="radio" name="question2" value="true" id='correctQ2'>True<br>
-				<input onclick='checkQ2()' type="radio" name="question2" value="false" id='incorrectQ2'>False<br>  		  
+			    <input onclick="checkQ2()" type="radio" name="question2" value="true" id='incorrectQ2'>True<br>
+				<input onclick='checkQ2()' type="radio" name="question2" value="false" id='correctQ2'>False<br>  		  
 			  </form> 
 			  <br/>
 		  </div>
@@ -78,27 +81,27 @@
               <h2 class="post-title">
                 Multiple Choice
               </h2> <br/>
-              <p >3. The total amount of energy that a star emits is directly related to its </p>
+              <p id="q3"></p>
 			  <div>
-				<input onclick="checkQ3()"  type="checkbox" name='question3' value='a1' id='iQ31'> surface gravity and magnetic field 
+				<input onclick="checkQ3()"  type="checkbox" name='question3' value='a1' id='iQ31'><a id="q3a"></a>
 					<span class="checkmark"></span><br/>
-				<input onclick="checkQ3()" type="checkbox" name='question3' value='a2' id='correctQ3'> radius and temperature 
+				<input onclick="checkQ3()" type="checkbox" name='question3' value='a2' id='correctQ3'><a id="q3b"></a>
 					<span class="checkmark"></span><br/>
-				<input onclick="checkQ3()" type="checkbox" name='question3' value='a3' id='iQ32'> pressure and volume
+				<input onclick="checkQ3()" type="checkbox" name='question3' value='a3' id='iQ32'><a id="q3c"></a>
 					<span class="checkmark"></span><br/>
-				<input onclick="checkQ3()" type="checkbox" name='question3' value='a4' id='iQ33'> location and velocity 
+				<input onclick="checkQ3()" type="checkbox" name='question3' value='a4' id='iQ33'><a id="q3d"></a>
 					<span class="checkmark"></span>
 			  </div>
 
-			  <p><br/><br/>4. Stars that live the longest have </p>
+			  <p id="q4"><br/><br/></p>
 			  <div>
-				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ41'> high mass 
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ41'><a id="q4a"></a> 
 					<span class="checkmark"></span><br/>
-				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ42'> high temperature 
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ42'><a id="q4b"></a>
 					<span class="checkmark"></span><br/>
-				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ43'> lots of hydrogen
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ43'><a id="q4c"></a>
 					<span class="checkmark"></span><br/>
-				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='correctQ4'> small mass 
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='correctQ4'><a id="q4d"></a>
 					<span class="checkmark"></span>
 			  </div>
 			  <br/><br/>
@@ -111,9 +114,9 @@
 			  <h2 class="post-title">Fill In The Blank</h2>
 			  <p>Extra Credit!</p> <br/>
 			  
-              <p class="post-meta">5. A collection of a hundred billion stars, gas, and dust is called a ____.<br/><br/>
+              <p class="post-meta"><a id="q5"></a><br/><br/>
 				<input id = "question5" type = "text" name = "question5"></p>
-			  <p class="post-meta"><br/><br/>6. The inverse of the Hubble's constant is a measure of the _____ of the universe.<br/><br/>
+			  <p class="post-meta"><br/><br/><a id="q6"></a><br/><br/>
 				<input id = "question6" type = "text" name = "question6"></p>
 			  <hr/>
 			  
@@ -142,7 +145,7 @@
       </div>
     </footer>
 
-	<!-- formatting script --> 
+	<!-- formatting script and text reading script --> 
     <script src="player1.js"></script>
 	
 	<!-- grading script --> 
@@ -249,8 +252,8 @@
 		true6 = true;
 	} 
 	
-	if(lower5 == 'galaxy'){
-		if(lower6 == 'age'){ //if both correct, add 2 
+	if(lower5 == 'acceleration'){
+		if(lower6 == 'blue'){ //if both correct, add 2 
 			num_correct = num_correct + 2; 
 			document.getElementById("score").innerHTML = num_correct;
 		} 
@@ -259,7 +262,7 @@
 			document.getElementById("score").innerHTML = num_correct;
 		} 
 	} 
-	else if (lower6 == 'age'){ // if only #6 correct, add 1 
+	else if (lower6 == 'blue'){ // if only #6 correct, add 1 
 		num_correct = num_correct+1; 
 		document.getElementById("score").innerHTML = num_correct;
 	} 

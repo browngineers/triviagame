@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Browngineerz Project 2</title>
+	<script src="textRead.js"></script>
+    <link href="player1.css" rel="stylesheet">
+	<div data-role="fieldcontain" class="ui-hide-label" id="textDiv"></div>
+	<iframe id="frmFile" src="PoliticsQuiz.txt" onload="LoadFile();" style="display: none;"></iframe>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand">Browngineerz | Project 2</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link">Github</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link">Project Landing Page</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Self Grading Quiz</h1>
+              <span class="subheading">You Are In 1-Player Mode</span>
+			  <span class="subheading">Start The Politics Quiz Below</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+	
+
+
+    <!-- Main Content -->
+    <div class="container">
+	
+	<div class="sticky">
+		Score: <span id='score'>null</span><br/>
+		Time: <span id='timeTaken'>null</span>
+	</div>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+              <h2 class="post-title">True/False</h2>
+			  <br/>
+              <p id="q1"></p>
+			  <form>
+			    <input onclick="checkQ1()" type="radio" name="question1" value="true" id='correctQ1'>True<br>
+				<input onclick="checkQ1()" type="radio" name="question1" value="false" id='incorrectQ1' >False<br>  		  
+			  </form> 
+
+			  <br/><br/>
+			  
+			  <p id="q2"></p>
+			  <form>
+			    <input onclick="checkQ2()" type="radio" name="question2" value="true" id='incorrectQ2'>True<br>
+				<input onclick='checkQ2()' type="radio" name="question2" value="false" id='correctQ2'>False<br>  		  
+			  </form> 
+			  <br/>
+		  </div>
+          <hr>
+          <div class="post-preview">
+            
+              <h2 class="post-title">
+                Multiple Choice
+              </h2> <br/>
+              <p id="q3"></p>
+			  <div>
+				<input onclick="checkQ3()"  type="checkbox" name='question3' value='a1' id='iQ31'><a id="q3a"></a>
+					<span class="checkmark"></span><br/>
+				<input onclick="checkQ3()" type="checkbox" name='question3' value='a2' id='correctQ3'><a id="q3b"></a>
+					<span class="checkmark"></span><br/>
+				<input onclick="checkQ3()" type="checkbox" name='question3' value='a3' id='iQ32'><a id="q3c"></a>
+					<span class="checkmark"></span><br/>
+				<input onclick="checkQ3()" type="checkbox" name='question3' value='a4' id='iQ33'><a id="q3d"></a>
+					<span class="checkmark"></span>
+			  </div>
+
+			  <p id="q4"><br/><br/></p>
+			  <div>
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ41'><a id="q4a"></a> 
+					<span class="checkmark"></span><br/>
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ42'><a id="q4b"></a>
+					<span class="checkmark"></span><br/>
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='iQ43'><a id="q4c"></a>
+					<span class="checkmark"></span><br/>
+				<input onclick="checkQ4()" type="checkbox" name='question4' value='a1' id='correctQ4'><a id="q4d"></a>
+					<span class="checkmark"></span>
+			  </div>
+			  <br/><br/>
+          </div>
+		  
+          <hr>
+          <div class="post-preview">
+
+			  <form id = "textForm" method = "post" onsubmit = "return validate();" >
+			  <h2 class="post-title">Fill In The Blank</h2>
+			  <p>Extra Credit!</p> <br/>
+			  
+              <p class="post-meta"><a id="q5"></a><br/><br/>
+				<input id = "question5" type = "text" name = "question5"></p>
+			  <p class="post-meta"><br/><br/><a id="q6"></a><br/><br/>
+				<input id = "question6" type = "text" name = "question6"></p>
+			  <hr/>
+			  
+			  <!-- Buttons --> 
+			  <input type = "submit" value = "Enter" />
+			  <input type = "reset" value = "Clear" />
+			  <br/><br/>
+			  </form>
+		  </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p class="copyright text-muted">Rohan Chaudhry | Shane Mathew | Mehul Mittal | Mohammad Syed<br/>
+				Wolph-Coffman | TTH 11-12:30 | Project 02 
+			</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+	<!-- formatting script and text reading script --> 
+    <script src="player1.js"></script>
+	
+	<!-- grading script --> 
+	<script> 
+	var num_correct = 0; 
+	var true1 = false; 
+	var true2 = false;
+	var true3 = false;
+	var true4 = false;
+	var true5 = false;
+	var true6 = false;
+
+	
+	
+	
+	function checkQ1(){
+		if(document.getElementById("correctQ1").checked){
+			num_correct = num_correct + 1; 
+			console.log(num_correct); 
+			document.getElementById("score").innerHTML = num_correct;
+			
+			true1 = true; 
+		} 
+		else if(document.getElementById("incorrectQ1").checked){
+			true1 = true;
+			document.getElementById("score").innerHTML = num_correct;
+		} 
+	} 
+	
+	function checkQ2(){
+		if(document.getElementById("correctQ2").checked){
+			num_correct = num_correct + 1; 
+			console.log(num_correct); 
+			document.getElementById("score").innerHTML = num_correct;
+			
+			true2 = true; 
+		} 
+		else if(document.getElementById("incorrectQ2").checked){
+			true2 = true;
+			document.getElementById("score").innerHTML = num_correct;
+		} 
+	} 
+	
+	function checkQ3(){
+		if(document.getElementById("correctQ3").checked){
+			true3 = true; 
+			if( (document.getElementById("iQ31").checked)||(document.getElementById("iQ32").checked)||(document.getElementById("iQ33").checked) ){
+				//do nothing if another choice selcted 
+				document.getElementById("score").innerHTML = num_correct;
+			} 
+			else{ //else it's correct 
+				num_correct = num_correct+1; 
+				document.getElementById("score").innerHTML = num_correct;
+			 
+				} 
+		} 
+		else if((document.getElementById("iQ31").checked)||(document.getElementById("iQ32").checked)||(document.getElementById("iQ33").checked)){
+			true3 = true; 
+			document.getElementById("score").innerHTML = num_correct;
+		} 
+	
+	console.log(num_correct); 
+	} 
+	
+	function checkQ4(){
+		if(document.getElementById("correctQ4").checked){
+			true4 = true; 
+			if( (document.getElementById("iQ41").checked) ||(document.getElementById("iQ42").checked)||(document.getElementById("iQ43").checked) ){
+				//do nothing if another choice selcted 
+				document.getElementById("score").innerHTML = num_correct;
+		} 
+			else{ //else it's correct 
+				num_correct = num_correct+1; 
+				document.getElementById("score").innerHTML = num_correct;
+				} 
+		} 
+		else if( (document.getElementById("iQ41").checked) ||(document.getElementById("iQ42").checked)||(document.getElementById("iQ43").checked)){
+			true4 = true; 
+			document.getElementById("score").innerHTML = num_correct;
+		} 
+	
+	console.log(num_correct); 
+
+	} 
+	
+	
+	document.getElementById("textForm").onsubmit = validate;
+    function validate (){
+	
+	var elt = document.getElementById("textForm");
+	var ans5 = elt.question5.value; 
+	var ans6 = elt.question6.value; 
+	
+	var lower5 = ans5.toLowerCase(); 
+	var lower6 = ans6.toLowerCase(); 
+	
+	if(ans5 != ""){
+		true5 = true;
+		if(ans6 != ""){
+			true6 = true;
+		} 
+	}
+	if(ans6!=""){
+		true6 = true;
+	} 
+	
+	if(lower5 == 'paul ryan'){
+		if(lower6 == 'new york'){ //if both correct, add 2 
+			num_correct = num_correct + 2; 
+			document.getElementById("score").innerHTML = num_correct;
+		} 
+		else{ // if only #5 correct, add 1 
+			num_correct = num_correct + 1; 
+			document.getElementById("score").innerHTML = num_correct;
+		} 
+	} 
+	else if (lower6 == 'new york'){ // if only #6 correct, add 1 
+		num_correct = num_correct+1; 
+		document.getElementById("score").innerHTML = num_correct;
+	} 
+
+	// else if both wrong, no added points 
+	console.log(num_correct); 
+	
+	finalScore(); 
+
+	} 
+	
+	function finalScore(){
+	console.log('atregds');
+	if( (true1 == false) ||(true2 == false) ||(true3 == false) ||(true4 == false) ||(true5 == false) ||(true6 == false)){
+		window.alert('You failed to provde an answer, so this quiz will not be graded.'); 
+	}
+	else{
+		window.alert('Your final grade is ' + num_correct + ' / 6.'); 
+	} 
+	
+	
+
+	} 
+	
+	document.getElementById("score").innerHTML = num_correct;
+	
+	
+	var time = 0; 
+	var running = 1; 
+	
+	increment(); 
+	
+	function increment(){
+		if(running==1){
+			setTimeout(function(){
+				time++;
+				var mins = Math.floor(time/10/60);
+				var secs = Math.floor(time/10); 
+				if(secs > 60){
+				    secs = secs - mins*(60);
+				} 
+				
+				var tenths = time%10; 
+				increment(); 
+				
+				document.getElementById("timeTaken").innerHTML = mins + ":" + secs + ":" + tenths; 
+				/*
+				if(document.getElementById("done").onclick){
+					document.getElementById("output").innerHTML = mins + ":" + secs + ":" + tenths; 
+				}*/
+				
+			
+				
+				
+		} , 100); 
+		}
+	}
+	
+	
+	</script> 
+
+  </body>
+
+</html>
